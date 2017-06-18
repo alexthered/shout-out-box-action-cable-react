@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Shout.destroy_all
+
+10.times do |index|
+  Shout.create!(name: Faker::Name.first_name,
+                content: Faker::Company.catch_phrase)
+end
+
+p "Created #{Shout.count} movies"
